@@ -103,7 +103,7 @@ contract MyPiggy {
         if (!token.transfer(msg.sender, finalAmount)) revert PiggyErrors.TransferFailed();
 
         balances[msg.sender][address(this)] -= withdrawalAmount;
-            contractBalance[address(this)] -= withdrawalAmount;
+        contractBalance[address(this)] -= withdrawalAmount;
 
         emit WithdrawalSuccessful(msg.sender, finalAmount);
     }
